@@ -1,0 +1,99 @@
+$ \textrm{Find the derivatives of A:}$
+
+\begin{aligned}
+A(\theta) &= \theta^T X^T X \theta \\
+&= \begin{pmatrix}
+  \theta_1 & \theta_2 & ... & \theta_n
+\end{pmatrix} \begin{pmatrix}
+   x_{11} & x_{21} & ... & x_{m1} \\
+   x_{12} & x_{22} & ... & x_{m2} \\
+... & ... & ... & ... \\
+x_{1n} & x_{2n} & ... & x_{mn} \\
+\end{pmatrix} \begin{pmatrix}
+   x_{11} & x_{12} & ... & x_{1n} \\
+   x_{12} & x_{22} & ... & x_{2n} \\
+... & ... & ... & ... \\
+x_{m1} & x_{m2} & ... & x_{mn} \\
+\end{pmatrix}\begin{pmatrix}
+  \theta_1 \\ \theta_2 \\ ... \\ \theta_n
+\end{pmatrix} \\ \\
+&=\begin{pmatrix}
+  \theta_1 & \theta_2 & ... & \theta_n
+\end{pmatrix} \begin{pmatrix}
+   x_{11}^2 \theta1 & ... & x_{1n}^2 \theta_n \\
+   x_{21}^2 \theta1 & ... & x_{2n}^2 \theta_n \\
+... & ... & ...  \\
+x_{n1}^2 \theta1 & ... & x_{nn}^2 \theta_n \\
+\end{pmatrix} \\ \\
+&=\theta_1 (x_{11}^2 \theta_1+ ... + x_{1n}^2 \theta_n) + ... + \theta_n(x_{n1}^2 \theta_1+ ... + x_{nn}^2 \theta_n) \\
+\end{aligned}
+
+$ \textrm{Therefore for each paramater n:}$
+
+\begin{equation}
+\frac{\partial A}{\partial \theta1} = 2 \theta_1 x_{11}^2 + 2 \theta_1 x_{12}^2 + ... + 2 \theta_1 x_{1n}^2
+\end{equation}
+
+$$\textrm{...}$$
+
+\begin{equation}
+\frac{\partial A}{\partial \theta_n} = 2 \theta_n x_{n1}^2 + 2 \theta_n x_{n2}^2 + ... + 2 \theta_n x_{nn}^2
+\end{equation}
+
+$ \textrm{And if we convert all of these derivates into vectors then:}$
+
+\begin{equation}
+\implies \tag{1}\frac{\partial A}{\partial \theta_n} = 2 \theta X^T X 
+\end{equation}
+
+$$\textrm{---}$$
+
+$ \textrm{Find the derivatives of B:}$
+
+\begin{aligned}
+B(\theta) &= 2 (X \theta)^T y \\
+&= 2 \left( \begin{pmatrix}
+   x_{11} & x_{12} & ... & x_{1n} \\
+   x_{21} & x_{22} & ... & x_{2n} \\
+... & ... & ... & ... \\
+x_{m1} & x_{m2} & ... & x_{mn} \\
+\end{pmatrix}  \begin{pmatrix}
+  \theta_1 \\ \theta_2 \\ ... \\ \theta_n
+\end{pmatrix} \right)^T \begin{pmatrix}
+  y_1 \\ y_2 \\ ... \\ y_m
+\end{pmatrix} \\
+&= 2(x_{11} \theta_1 + ... + x_{1n} \theta_n) y_1 + ... + 2(x_{m1} \theta_1 + ... + x_{mn} \theta_n) y_m
+\end{aligned}
+
+$ \textrm{Therefore for each paramater n:}$
+
+\begin{equation}
+\frac{\partial B}{\partial \theta1} = 2 (x_{11} y_1 + ... + x_{m1} y_m)
+\end{equation}
+
+$$\textrm{...}$$
+
+\begin{equation}
+\frac{\partial B}{\partial \theta_n} = 2 (x_{1n} y_1 + ... + x_{mn} y_m)
+\end{equation}
+
+$ \textrm{And if we convert all of these derivates into vectors then:}$
+
+\begin{equation}
+\tag{2}\frac{\partial B}{\partial \theta} = 2 X^T y
+\end{equation}
+
+
+$$\textrm{---}$$
+
+$\textrm{The third term does not contain any}$ $\theta$ $\textrm{parameter and therefore the derivate of,}$
+
+\begin{aligned}
+C(\theta) = y^T y \\
+\end{aligned}
+
+$\textrm{will be zero:}$
+
+\begin{equation}
+\tag{3}\frac{\partial C}{\partial \theta} = 0 
+\end{equation}
